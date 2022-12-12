@@ -30,9 +30,7 @@ public class Quicksort {
     return index;
   }
 
-  public static int pickPivotIndex(int start, int end) {
-    return (int) (start + (end - start + 1) * Math.random());
-  }
+  public static int pickPivotIndex(int start, int end) { return (int) (start + (end - start + 1) * Math.random()); }     //Math mutation stays here
 
   public static <T extends Comparable<T>> void swap(T[] arr, int i, int j) {
     T temp = arr[i];

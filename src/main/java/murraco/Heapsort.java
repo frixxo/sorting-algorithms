@@ -1,10 +1,13 @@
 package murraco;
 
+import java.util.Arrays;
+
 public class Heapsort {
 
   // Time complexity: O(n*log(n)) - Space complexity: O(1)
   public static <T extends Comparable<T>> void heapSort(T[] arr) {
     buildMaxHeap(arr);
+    System.out.println(" here we have max heap 1" + Arrays.toString(arr));
     int heapSize = arr.length - 1;
     for (int i = arr.length - 1; i > 0; i--) {
       swap(arr, 0, heapSize);
@@ -15,7 +18,9 @@ public class Heapsort {
 
   public static <T extends Comparable<T>> void maxHeapify(T[] arr, int i, int n) {
     int leftChild = i * 2 + 1;
-    int rightChild = leftChild + 1;
+    int rightChild = leftChild + 1;        //Math mutation stays here
+    System.out.println(Arrays.toString(arr));
+    System.out.println("parent : "+ arr[i] + ": left = " + leftChild + " right: " + rightChild);
     int largest = i;
     if (leftChild <= n && arr[i].compareTo(arr[leftChild]) < 0) {
       largest = leftChild;
